@@ -1,3 +1,4 @@
-{{ define "main" }}
-{{ .Content }}
-{{ end }}
+{{$comics := ($.Site.GetPage "comic").Pages.ByDate}}
+{{ range last 1 $comics }}
+    {{ .Render }}
+{{end}}
