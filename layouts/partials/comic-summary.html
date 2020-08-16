@@ -1,0 +1,23 @@
+{{ $permalink := .Permalink }}
+<div class="tile is-child box py-2 px-0">
+    <div class="columns is-mobile is-vcentered">
+        <div class="column is-narrow">
+            <figure class="image is-64x64 mx-2">
+                <a href="{{ $permalink }}">
+                    {{ if .Params.thumbnail }}
+                    <img src="{{ .Params.thumbnail }}" alt="">
+                    {{ else }}
+                        <i class="far fa-3x fa-image"></i></i>
+                    {{ end }}
+                </a>
+            </figure>
+        </div>
+        <div class="column">
+            <div>
+                <a href="{{ $permalink }}">
+                    <h5 class="subtitle is-5 my-0"> {{ .Title }} </h5>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

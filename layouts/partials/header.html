@@ -1,14 +1,11 @@
 <header>
-    <nav class="navbar" role="navigation">
-        <div class="container">
+    <nav class="navbar is-dark is-transparent graphic-header" role="navigation">
+        <div class="container ">
             <div class="navbar-brand">
                 <a href="/" title="home" class="navbar-item">
                     <span class="logo"><h1>{{ .Site.Title }}</h1></span>
                 </a>
-                {{ range .Site.Menus.social }}
-                <a href="{{ .URL }}" class="navbar-item is-hidden-desktop" title="{{ .Name }}"><span
-                        class="icon">{{ .Pre }}</span></a>
-                {{ end }}
+
                 <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
                     <span aria-hidden="true"></span>
                     <span aria-hidden="true"></span>
@@ -23,8 +20,9 @@
                 </div>
                 <div class="navbar-end">
                     {{ range .Site.Menus.social }}
-                    <a href="{{ .URL }}" class="navbar-item is-hidden-touch" title="{{ .Name }}"><span
-                            class="icon">{{ .Pre }}</span></a>
+                    <a href="{{ .URL }}" class="navbar-item" title="{{ .Name }}">
+                        <span class="icon">{{ .Pre }}</span>
+                    </a>
                     {{ end }}
                 </div>
             </div>
