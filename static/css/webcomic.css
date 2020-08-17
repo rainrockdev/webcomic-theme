@@ -23,10 +23,17 @@ html {
     background-repeat: no-repeat;
     background-position: top center;
     background-attachment: fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-
+    -webkit-background-size: 100vw;
+    -moz-background-size: 100vw;
+    -o-background-size: 100vw;
+    background-size: 100vw;
+    width: 100vw;
     height: 24rem;
-  }
+}
+
+@media screen and (max-device-width: 1024px) {
+    .post-image, .graphic-header {
+        background-attachment: scroll;
+        height: auto;
+    }
+}
