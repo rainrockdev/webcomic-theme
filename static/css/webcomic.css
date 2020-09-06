@@ -1,3 +1,8 @@
+html { 
+    background-image: url(../img/bg.png); 
+    background-repeat: repeat;
+}
+
 html, body {
     overflow-x: hidden;
 }
@@ -26,21 +31,19 @@ body {
     min-height: 6rem;
 }
 
-html { 
-    background-image: url(../img/bg.png); 
-    background-repeat: repeat;
+.text {
+    max-width: 600px;
 }
 
-.post-image { 
-    background-repeat: no-repeat;
-    background-position: top center;
-    background-attachment: fixed;
-    -webkit-background-size: 100vw;
-    -moz-background-size: 100vw;
-    -o-background-size: 100vw;
-    background-size: 100vw;
-    width: 100vw;
-    height: 24rem;
+@media screen and (max-device-width: 769px) {
+    .text {
+        padding-left: 4%;
+        padding-right: 4%;
+    }
+}
+
+.post-img { 
+    width: 100vh;
 }
 
 .comic-img {
