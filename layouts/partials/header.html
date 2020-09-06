@@ -1,9 +1,15 @@
 <header>
-    <nav class="navbar is-dark is-transparent graphic-header" role="navigation">
+    <nav class="navbar is-transparent graphic-header" role="navigation">
         <div class="container ">
             <div class="navbar-brand">
                 <a href="/" title="home" class="navbar-item">
+                    {{ if .Site.Menus.logo }}
+                    {{ range .Site.Menus.logo }}
+                            {{.Pre}}
+                    {{ end }}
+                    {{ else }}
                     <span class="logo"><h1>{{ .Site.Title }}</h1></span>
+                    {{ end }}
                 </a>
 
                 <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
