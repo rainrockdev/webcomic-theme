@@ -1,65 +1,69 @@
 
-    <h1 class="subtitle is-4">{{.Title}}</h1>
-    <div class="columns is-centered">
-        <div class="column is-narrow box">
-            <figure class="mx-0">
-                {{ if .Params.image }}
-                <img src="{{ .Params.image }}" alt="{{ .Title }}" class="comic-img"/>
-                {{ end }}
-            </figure>
-        </div>
-    </div>
-    
-    {{$comics := ($.Site.GetPage "comic").Pages.ByDate}}
-    <div class="columns is-mobile is-centered">
-        <div class="column has-text-left is-size-7-mobile is-size-4-desktop">
-            {{ with .PrevInSection }} <!-- don't show this section if this is the oldest comic (no previous) -->
-                {{ range first 1 $comics }}
-                <a href="{{ .Permalink }}">Oldest</a>
-                {{ end }}
-            {{ end }}
-        </div>
-        <div class="column has-text-left is-size-7 is-size-4-desktop">
-            {{ with .PrevInSection }}
-            <a href="{{ .Permalink }}">Previous</a>
-            {{ end }}
-        </div>
-        
-        <div class="column has-text-right is-size-7 is-size-4-desktop">
-            {{ with .NextInSection }}
-            <a href="{{ .Permalink }}">Next</a>
-            {{ end }}
-        </div>
-        <div class="column has-text-right is-size-7 is-size-4-desktop">
-            {{ with .NextInSection }} <!-- don't show this section if this is the newest comic (no next) -->
-                {{ range last 1 $comics }}
-                <a href="{{ .Permalink }}">Newest</a>
-                {{ end }}
-            {{ end }}
-        </div>
-    </div>
-
-    <div class="columns is-centered">
-        <div class="column comic-meta">
-            <span class="comic-date">
-                Published {{ .Date.Format "Mon, Jan 2, 2006" }}
-            </span> 
-            <div class="comic-description text">
-                {{ .Params.description }}
+    <div class="section px-1 mx-0 py-5">
+        <div class="columns is-centered">
+            <div class="column is-narrow box">
+                <figure class="mx-0">
+                    {{ if .Params.image }}
+                    <img src="{{ .Params.image }}" alt="{{ .Title }}" class="comic-img"/>
+                    {{ end }}
+                </figure>
             </div>
-
-            <br>
-
-            {{ with .Params.tags }}
-            <span class="comic-tags">Tag{{ if gt (len .) 1 }}s{{ end }}
-                {{ range . }}
-                <a href="/tags/{{ replace (replace (lower .) " " "-") "'" ""}}" class="tag">
-                    {{ . }}
-                </a>
+        </div>
+    </div> 
+    {{$comics := ($.Site.GetPage "comic").Pages.ByDate}}
+    <div class="section my-0 py-0 mx-3">
+        <div class="columns is-mobile is-centered">
+            <div class="column has-text-left is-size-7-mobile is-size-4-desktop">
+                {{ with .PrevInSection }} <!-- don't show this section if this is the oldest comic (no previous) -->
+                    {{ range first 1 $comics }}
+                    <a href="{{ .Permalink }}">Oldest</a>
+                    {{ end }}
                 {{ end }}
-            </span>
-            {{ end }} 
+            </div>
+            <div class="column has-text-left is-size-7 is-size-4-desktop">
+                {{ with .PrevInSection }}
+                <a href="{{ .Permalink }}">Previous</a>
+                {{ end }}
+            </div>
+            
+            <div class="column has-text-right is-size-7 is-size-4-desktop">
+                {{ with .NextInSection }}
+                <a href="{{ .Permalink }}">Next</a>
+                {{ end }}
+            </div>
+            <div class="column has-text-right is-size-7 is-size-4-desktop">
+                {{ with .NextInSection }} <!-- don't show this section if this is the newest comic (no next) -->
+                    {{ range last 1 $comics }}
+                    <a href="{{ .Permalink }}">Newest</a>
+                    {{ end }}
+                {{ end }}
+            </div>
+        </div>
+    
+        <div class="columns is-centered">
+            <div class="column text"> 
+                <h4 class="subtitle is-6">{{.Title}}</h4>
+                <div class="comic-description text">
+                    Published {{ .Date.Format "Mon, Jan 2, 2006" }}
+                </div>
+                <div class="comic-description text">
+                    {{ .Params.description }}
+                </div>
+    
+                <br>
+    
+                {{ with .Params.tags }}
+                <span class="comic-tags">Tag{{ if gt (len .) 1 }}s{{ end }}
+                    {{ range . }}
+                    <a href="/tags/{{ replace (replace (lower .) " " "-") "'" ""}}" class="tag">
+                        {{ . }}
+                    </a>
+                    {{ end }}
+                </span>
+                {{ end }} 
+            </div>
         </div>
     </div>
+
 
 

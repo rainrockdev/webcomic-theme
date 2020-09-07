@@ -1,8 +1,8 @@
 <footer class="footer">
     <div class="container">
-        <div class="columns has-text-centered">
+        <div class="columns is-centered">
             {{ range .Site.Menus.footer }}
-            <div class="column is-narrow">
+            <div class="column is-narrow  has-text-centered">
                 <a href="{{ .URL }}" class="">{{ .Name }}</a>
             </div>
             {{ end }}

@@ -31,6 +31,15 @@ body {
     min-height: 6rem;
 }
 
+.navbar-burger.is-large { 
+    transform: scale(2) translateX(-33%); 
+    height: auto;
+}
+
+footer{
+    padding: .5rem .5rem 1rem !important;
+}
+
 .text {
     max-width: 600px;
 }
