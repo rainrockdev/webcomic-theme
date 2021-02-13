@@ -1,0 +1,11 @@
+{{ define "main" }}
+    <h1>{{ .Title }}</h1>
+    {{ .Content }}
+    <div class="tile is-ancestor">
+        <div class="tile is-8 is-vertical is-parent">
+            {{ range (where .Site.Pages "Params.chapter" .Title).ByDate }}
+                {{ partial "comic-summary.html" . }}
+            {{ end }}
+        </div>
+    </div>
+{{ end }}
