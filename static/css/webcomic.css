@@ -32,7 +32,7 @@ body {
 }
 
 .graphic-header {
-    background: url("../img/banner.jpg") no-repeat top center fixed;
+    background: url("../img/banner.png") no-repeat top center fixed;
     -webkit-background-size: 100vw;
     -moz-background-size: 100vw;
     -o-background-size: 100vw;
