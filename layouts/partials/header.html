@@ -5,10 +5,13 @@
                 <a href="/" title="home" class="navbar-item {{$.Site.Params.headerClasses}}">
                     {{ if .Site.Menus.logo }}
                     {{ range .Site.Menus.logo }}
-                            {{.Pre}}
+                    {{.Pre}}
                     {{ end }}
                     {{ else }}
-                    <span class="logo"><h1>{{ .Site.Title }}</h1></span>
+                    <span class="logo">
+                        <h1>{{ .Site.Title }}</h1>
+                    </span>
+
                     {{ end }}
                 </a>
 

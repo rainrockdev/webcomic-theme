@@ -12,6 +12,7 @@ body {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
+    font-family: 'Arima', cursive;
 }
 
 #wrapper {
@@ -19,8 +20,11 @@ body {
 }
 
 .logo h1 {
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    font-size: 2em;
+    font-family: 'Sansita Swashed', cursive;
+    font-size: 3em;
+    color: lightgreen;
+    -webkit-text-stroke-width: 1.5px;
+    -webkit-text-stroke-color: darkgray
 }
 
 .is-dark .logo h1 {
